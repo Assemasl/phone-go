@@ -3,7 +3,6 @@ package database
 import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"phone-go/models"
 )
 
 var DB *gorm.DB
@@ -15,8 +14,6 @@ func Connect() {
 	if err != nil {
 		panic("Failed to connect to database!")
 	}
-
 	// Автоматическое создание таблиц
-	db.AutoMigrate(&models.Phone{})
 	DB = db
 }
